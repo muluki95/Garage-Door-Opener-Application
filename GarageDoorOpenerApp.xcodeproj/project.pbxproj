@@ -21,6 +21,8 @@
 		D757AB9A2D92055300478793 /* NotificationScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FC72D89D08800B32C05 /* NotificationScreenView.swift */; };
 		D757AB9C2D9207C200478793 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB9B2D9207A600478793 /* NotificationsViewModel.swift */; };
 		D7624FB52D89CF4600B32C05 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FB42D89CF4600B32C05 /* LoginScreenView.swift */; };
+		D78303BD2D9DD7B100FE7308 /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78303BC2D9DD7A000FE7308 /* ForgotPasswordModel.swift */; };
+		D78303BF2D9DD96900FE7308 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78303BE2D9DD95900FE7308 /* ForgotPasswordViewModel.swift */; };
 		D7E7BF382D8B643E00822066 /* GarageHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FC42D89D02B00B32C05 /* GarageHomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		D7624FC42D89D02B00B32C05 /* GarageHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageHomeView.swift; sourceTree = "<group>"; };
 		D7624FC62D89D06A00B32C05 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		D7624FC72D89D08800B32C05 /* NotificationScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScreenView.swift; sourceTree = "<group>"; };
+		D78303BC2D9DD7A000FE7308 /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
+		D78303BE2D9DD95900FE7308 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -97,6 +101,7 @@
 		D7624FC12D89CF8600B32C05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D78303BC2D9DD7A000FE7308 /* ForgotPasswordModel.swift */,
 				D73E084D2D9B2DEB00DA79D7 /* SettingsModel.swift */,
 				D757AB982D91F89A00478793 /* NotificationsModel.swift */,
 				D743DD5C2D8DD208000BC315 /* LoginScreenModel.swift */,
@@ -108,6 +113,7 @@
 		D7624FC22D89CF9000B32C05 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D78303BE2D9DD95900FE7308 /* ForgotPasswordViewModel.swift */,
 				D73E084B2D9B2D8F00DA79D7 /* SettingsViewModel.swift */,
 				D757AB9B2D9207A600478793 /* NotificationsViewModel.swift */,
 				D743DD692D8DFD01000BC315 /* RegisterViewModel.swift */,
@@ -198,6 +204,7 @@
 				D743DD5D2D8DD221000BC315 /* LoginScreenModel.swift in Sources */,
 				D75279CC2D8CBEC000AE507B /* ForgotPasswordView.swift in Sources */,
 				D73E084C2D9B2DE400DA79D7 /* SettingsViewModel.swift in Sources */,
+				D78303BD2D9DD7B100FE7308 /* ForgotPasswordModel.swift in Sources */,
 				D75279C82D8C821500AE507B /* GarageDoorStatusModel.swift in Sources */,
 				D757AB992D91F8AA00478793 /* NotificationsModel.swift in Sources */,
 				D757AB9C2D9207C200478793 /* NotificationsViewModel.swift in Sources */,
@@ -206,6 +213,7 @@
 				D743DD5F2D8DD45B000BC315 /* LoginScreenViewModel.swift in Sources */,
 				D75279C72D8C820B00AE507B /* GarageDoorViewModel.swift in Sources */,
 				D74AB9952D9B3DC300541BA2 /* SettingsScreenView.swift in Sources */,
+				D78303BF2D9DD96900FE7308 /* ForgotPasswordViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,12 +7,12 @@
 import SwiftUI
 
 struct SettingsScreenView: View {
-    @ObservedObject var viewModel: SettingsViewModel
+    @EnvironmentObject var viewModel:SettingsViewModel
     
     var body: some View {
         Form {
-            Toggle("Dark Mode",isOn: $viewModel.userSettings.isDarkMode )
-            Toggle("Enable notifications", isOn:$viewModel.userSettings.notificationEnabled)
+            Toggle("Dark Mode",isOn: $viewModel.isDarkMode )
+            Toggle("Enable notifications", isOn:$viewModel.notificationEnabled)
         }
         .padding(20)
         .navigationTitle(Text("Settings"))
@@ -21,6 +21,7 @@ struct SettingsScreenView: View {
 
 struct SettingsScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsScreenView(viewModel: SettingsViewModel())
+        SettingsScreenView()
+            .environmentObject(SettingsViewModel())
     }
 }

@@ -50,7 +50,7 @@ struct GarageHomeView: View {
                                         .padding()
                                 }
                 //Navigation to SettingScreenView
-                NavigationLink(destination: SettingsScreenView(viewModel: viewModel)) {
+                NavigationLink(destination: SettingsScreenView()) {
                     Text("Settings")
                         .font(.headline)
                         .foregroundColor(.blue)
@@ -72,7 +72,7 @@ struct GarageHomeView_Previews: PreviewProvider {
                 let garageVM = GarageDoorViewModel(notificationsViewModel: notificationsVM)
                 
                 return GarageHomeView(notificationsViewModel: notificationsVM, garageViewModel: garageVM)
-            
+            .environmentObject(SettingsViewModel())
             
     }
 }

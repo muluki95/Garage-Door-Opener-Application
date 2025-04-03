@@ -8,16 +8,17 @@
 import SwiftUI
 
 class SettingsViewModel: ObservableObject {
-    @Published var userSettings = UserSettings(isDarkMode: false , notificationEnabled: true )
+    @Published var isDarkMode: Bool = false
+    @Published var notificationEnabled: Bool = true
     
     
     //function to toggle dark mode
     
     func toggleDarkMode(){
-        userSettings.isDarkMode.toggle()
+        isDarkMode.toggle()
     }
     
     func enableNotifications(){
-        userSettings.notificationEnabled.toggle()
+        notificationEnabled.toggle()
     }
 }
