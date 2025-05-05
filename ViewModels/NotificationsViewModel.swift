@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class NotificationsViewModel: ObservableObject {
-    @Published var notifications: [NotificationItem] = []
+    @Published var notifications: [Notification] = []
     
     func addNotification(title:String, message:String){
-        let newNotification = NotificationItem(title:title, message:message, timestamp:Date())
+        let newNotification = Notification(title:title, message:message, timestamp:Date())
         notifications.insert(newNotification, at:0) //adds the new notification at the top of the list
         //print("✅ Notification Added: \(newNotification.title) - \(newNotification.message)")
     }

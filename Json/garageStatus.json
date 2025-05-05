@@ -1,0 +1,19 @@
+{
+    "garage":{
+        "isOpen" : true
+    }
+    "notifications": [
+        {
+        "id": "notif001",
+        "title":"doorOpened",
+        "message":"Garage door was opened",
+        "timestamp" : "2025-05-01T10:00:00Z"
+    },
+    {
+        "id": "notif002",
+        "title": "doorClosed",
+        "message": "Garage door was closed",
+        "timestamp": "2025-05-01T10:35:00Z"
+    }
+    ]
+}

@@ -6,9 +6,17 @@
 //
 import Foundation
 
-struct NotificationItem: Identifiable {
-    let id = UUID()
-    let title: String
-    let message: String
-    let timestamp: Date
+struct Notification: Codable,Identifiable {
+    var id = UUID()
+    var title: String
+    var message: String
+    var timestamp = Date()
+}
+
+extension Notification {
+    static let testNotification = Notification (
+        title: "Garage Door Opened",
+        message: "Your garage door has been opened at 3.15PM"
+    
+    )
 }

@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct GarageDoorOpenerAppApp: App {
+    
     @StateObject private var notificationsViewModel = NotificationsViewModel()
     @StateObject private var garageViewModel: GarageDoorViewModel
     @StateObject private var settingsViewModel = SettingsViewModel()
     
     init() {
+        //initializing the Firebase SDK
+        FirebaseApp.configure()
             // Ensure the same NotificationsViewModel instance is passed to GarageDoorViewModel
             let sharedNotificationsViewModel = NotificationsViewModel()
             _garageViewModel = StateObject(wrappedValue: GarageDoorViewModel(notificationsViewModel: sharedNotificationsViewModel))
@@ -22,12 +26,12 @@ struct GarageDoorOpenerAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+            ContentView()
             GarageHomeView(
             notificationsViewModel: notificationsViewModel,
             garageViewModel: garageViewModel
             )
-            .environmentObject(settingsViewModel)
-            .preferredColorScheme(settingsViewModel.isDarkMode ? .dark : .light) // Applies dark mode globally
+            
         }
     }
 }
