@@ -7,5 +7,5 @@
 
 struct GarageDoorStatus {
     var isOpen: Bool
-    var notifications: [NotificationItem]
+    var notifications: [Notification]
 }

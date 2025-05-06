@@ -7,30 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D73E084C2D9B2DE400DA79D7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E084B2D9B2D8F00DA79D7 /* SettingsViewModel.swift */; };
-		D73E084E2D9B2DF500DA79D7 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E084D2D9B2DEB00DA79D7 /* SettingsModel.swift */; };
-		D743DD5D2D8DD221000BC315 /* LoginScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D743DD5C2D8DD208000BC315 /* LoginScreenModel.swift */; };
-		D743DD5F2D8DD45B000BC315 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D743DD5E2D8DD440000BC315 /* LoginScreenViewModel.swift */; };
-		D743DD6A2D8DFD18000BC315 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D743DD692D8DFD01000BC315 /* RegisterViewModel.swift */; };
-		D74AB9952D9B3DC300541BA2 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FC62D89D06A00B32C05 /* SettingsScreenView.swift */; };
-		D75279C72D8C820B00AE507B /* GarageDoorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75279C62D8C6C7500AE507B /* GarageDoorViewModel.swift */; };
-		D75279C82D8C821500AE507B /* GarageDoorStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75279C52D8C6B1500AE507B /* GarageDoorStatusModel.swift */; };
-		D75279CA2D8CBEAA00AE507B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75279C92D8CBE9E00AE507B /* RegisterView.swift */; };
-		D75279CC2D8CBEC000AE507B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75279CB2D8CBEB200AE507B /* ForgotPasswordView.swift */; };
-		D757AB992D91F8AA00478793 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB982D91F89A00478793 /* NotificationsModel.swift */; };
-		D757AB9A2D92055300478793 /* NotificationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FC72D89D08800B32C05 /* NotificationRowView.swift */; };
-		D757AB9C2D9207C200478793 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757AB9B2D9207A600478793 /* NotificationsViewModel.swift */; };
-		D7624FB52D89CF4600B32C05 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FB42D89CF4600B32C05 /* LoginScreenView.swift */; };
-		D7685D3C2DC91E6F00EFC07D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D7685D3B2DC91E6F00EFC07D /* FirebaseAnalytics */; };
-		D7685D3E2DC91E6F00EFC07D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D7685D3D2DC91E6F00EFC07D /* FirebaseFirestore */; };
-		D7685D402DC91E6F00EFC07D /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D7685D3F2DC91E6F00EFC07D /* FirebaseFirestoreCombine-Community */; };
 		D7685D432DC9283300EFC07D /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = D7685D422DC9283300EFC07D /* ToastUI */; };
-		D7685D492DC9553200EFC07D /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7685D482DC9552600EFC07D /* NotificationListView.swift */; };
-		D76F046F2DC526D3009F715F /* garageStatus.json in Resources */ = {isa = PBXBuildFile; fileRef = D76F046E2DC52362009F715F /* garageStatus.json */; };
-		D76F04712DC527BE009F715F /* GarageStatusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76F04702DC527AA009F715F /* GarageStatusData.swift */; };
-		D78303BD2D9DD7B100FE7308 /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78303BC2D9DD7A000FE7308 /* ForgotPasswordModel.swift */; };
-		D78303BF2D9DD96900FE7308 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78303BE2D9DD95900FE7308 /* ForgotPasswordViewModel.swift */; };
-		D7E7BF382D8B643E00822066 /* GarageHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7624FC42D89D02B00B32C05 /* GarageHomeView.swift */; };
+		D79F58CA2DCAB0A4002A5CBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,28 +22,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D73E084B2D9B2D8F00DA79D7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		D73E084D2D9B2DEB00DA79D7 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
-		D743DD5C2D8DD208000BC315 /* LoginScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenModel.swift; sourceTree = "<group>"; };
-		D743DD5E2D8DD440000BC315 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
-		D743DD692D8DFD01000BC315 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		D75279C52D8C6B1500AE507B /* GarageDoorStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoorStatusModel.swift; sourceTree = "<group>"; };
-		D75279C62D8C6C7500AE507B /* GarageDoorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoorViewModel.swift; sourceTree = "<group>"; };
-		D75279C92D8CBE9E00AE507B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		D75279CB2D8CBEB200AE507B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
-		D757AB982D91F89A00478793 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
-		D757AB9B2D9207A600478793 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		D7624FAF2D89CF4600B32C05 /* GarageDoorOpenerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageDoorOpenerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7624FB42D89CF4600B32C05 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
-		D7624FC42D89D02B00B32C05 /* GarageHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageHomeView.swift; sourceTree = "<group>"; };
-		D7624FC62D89D06A00B32C05 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
-		D7624FC72D89D08800B32C05 /* NotificationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRowView.swift; sourceTree = "<group>"; };
-		D7685D482DC9552600EFC07D /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
-		D76F046E2DC52362009F715F /* garageStatus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = garageStatus.json; sourceTree = "<group>"; };
-		D76F04702DC527AA009F715F /* GarageStatusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageStatusData.swift; sourceTree = "<group>"; };
 		D76F04762DC532CD009F715F /* GarageDoorOpenerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarageDoorOpenerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D78303BC2D9DD7A000FE7308 /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
-		D78303BE2D9DD95900FE7308 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -87,9 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7685D432DC9283300EFC07D /* ToastUI in Frameworks */,
-				D7685D402DC91E6F00EFC07D /* FirebaseFirestoreCombine-Community in Frameworks */,
-				D7685D3C2DC91E6F00EFC07D /* FirebaseAnalytics in Frameworks */,
-				D7685D3E2DC91E6F00EFC07D /* FirebaseFirestore in Frameworks */,
+				D79F58CA2DCAB0A4002A5CBF /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,11 +62,6 @@
 		D7624FA62D89CF4600B32C05 = {
 			isa = PBXGroup;
 			children = (
-				D76F04702DC527AA009F715F /* GarageStatusData.swift */,
-				D76F046C2DC522FD009F715F /* Json */,
-				D7624FC22D89CF9000B32C05 /* ViewModels */,
-				D7624FC12D89CF8600B32C05 /* Models */,
-				D7624FC02D89CF7B00B32C05 /* Views */,
 				D7624FB12D89CF4600B32C05 /* GarageDoorOpenerApp */,
 				D76F04772DC532CD009F715F /* GarageDoorOpenerAppTests */,
 				D7685D412DC9283300EFC07D /* Frameworks */,
@@ -127,58 +78,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D7624FC02D89CF7B00B32C05 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D7685D482DC9552600EFC07D /* NotificationListView.swift */,
-				D75279CB2D8CBEB200AE507B /* ForgotPasswordView.swift */,
-				D75279C92D8CBE9E00AE507B /* RegisterView.swift */,
-				D7624FC72D89D08800B32C05 /* NotificationRowView.swift */,
-				D7624FC62D89D06A00B32C05 /* SettingsScreenView.swift */,
-				D7624FC42D89D02B00B32C05 /* GarageHomeView.swift */,
-				D7624FB42D89CF4600B32C05 /* LoginScreenView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D7624FC12D89CF8600B32C05 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D78303BC2D9DD7A000FE7308 /* ForgotPasswordModel.swift */,
-				D73E084D2D9B2DEB00DA79D7 /* SettingsModel.swift */,
-				D757AB982D91F89A00478793 /* NotificationsModel.swift */,
-				D743DD5C2D8DD208000BC315 /* LoginScreenModel.swift */,
-				D75279C52D8C6B1500AE507B /* GarageDoorStatusModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D7624FC22D89CF9000B32C05 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				D78303BE2D9DD95900FE7308 /* ForgotPasswordViewModel.swift */,
-				D73E084B2D9B2D8F00DA79D7 /* SettingsViewModel.swift */,
-				D757AB9B2D9207A600478793 /* NotificationsViewModel.swift */,
-				D743DD692D8DFD01000BC315 /* RegisterViewModel.swift */,
-				D743DD5E2D8DD440000BC315 /* LoginScreenViewModel.swift */,
-				D75279C62D8C6C7500AE507B /* GarageDoorViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		D7685D412DC9283300EFC07D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D76F046C2DC522FD009F715F /* Json */ = {
-			isa = PBXGroup;
-			children = (
-				D76F046E2DC52362009F715F /* garageStatus.json */,
-			);
-			path = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,10 +105,8 @@
 			);
 			name = GarageDoorOpenerApp;
 			packageProductDependencies = (
-				D7685D3B2DC91E6F00EFC07D /* FirebaseAnalytics */,
-				D7685D3D2DC91E6F00EFC07D /* FirebaseFirestore */,
-				D7685D3F2DC91E6F00EFC07D /* FirebaseFirestoreCombine-Community */,
 				D7685D422DC9283300EFC07D /* ToastUI */,
+				D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */,
 			);
 			productName = GarageDoorOpenerApp;
 			productReference = D7624FAF2D89CF4600B32C05 /* GarageDoorOpenerApp.app */;
@@ -263,7 +165,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				D7685D392DC91C2F00EFC07D /* XCRemoteSwiftPackageReference "ToastUI" */,
-				D7685D3A2DC91E6F00EFC07D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D79F58C82DCAAFF2002A5CBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D7624FB02D89CF4600B32C05 /* Products */;
@@ -281,7 +183,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D76F046F2DC526D3009F715F /* garageStatus.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,25 +200,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D73E084E2D9B2DF500DA79D7 /* SettingsModel.swift in Sources */,
-				D7624FB52D89CF4600B32C05 /* LoginScreenView.swift in Sources */,
-				D76F04712DC527BE009F715F /* GarageStatusData.swift in Sources */,
-				D7E7BF382D8B643E00822066 /* GarageHomeView.swift in Sources */,
-				D743DD6A2D8DFD18000BC315 /* RegisterViewModel.swift in Sources */,
-				D743DD5D2D8DD221000BC315 /* LoginScreenModel.swift in Sources */,
-				D75279CC2D8CBEC000AE507B /* ForgotPasswordView.swift in Sources */,
-				D73E084C2D9B2DE400DA79D7 /* SettingsViewModel.swift in Sources */,
-				D78303BD2D9DD7B100FE7308 /* ForgotPasswordModel.swift in Sources */,
-				D75279C82D8C821500AE507B /* GarageDoorStatusModel.swift in Sources */,
-				D757AB992D91F8AA00478793 /* NotificationsModel.swift in Sources */,
-				D757AB9C2D9207C200478793 /* NotificationsViewModel.swift in Sources */,
-				D75279CA2D8CBEAA00AE507B /* RegisterView.swift in Sources */,
-				D7685D492DC9553200EFC07D /* NotificationListView.swift in Sources */,
-				D757AB9A2D92055300478793 /* NotificationRowView.swift in Sources */,
-				D743DD5F2D8DD45B000BC315 /* LoginScreenViewModel.swift in Sources */,
-				D75279C72D8C820B00AE507B /* GarageDoorViewModel.swift in Sources */,
-				D74AB9952D9B3DC300541BA2 /* SettingsScreenView.swift in Sources */,
-				D78303BF2D9DD96900FE7308 /* ForgotPasswordViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +471,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		D7685D3A2DC91E6F00EFC07D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		D79F58C82DCAAFF2002A5CBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -600,25 +482,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D7685D3B2DC91E6F00EFC07D /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7685D3A2DC91E6F00EFC07D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		D7685D3D2DC91E6F00EFC07D /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7685D3A2DC91E6F00EFC07D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		D7685D3F2DC91E6F00EFC07D /* FirebaseFirestoreCombine-Community */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7685D3A2DC91E6F00EFC07D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseFirestoreCombine-Community";
-		};
 		D7685D422DC9283300EFC07D /* ToastUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D7685D392DC91C2F00EFC07D /* XCRemoteSwiftPackageReference "ToastUI" */;
 			productName = ToastUI;
+		};
+		D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D79F58C82DCAAFF2002A5CBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyBm2AQhD3lmO1uiDQMKFteD8SwEUolbdDo</string>
+	<string>AIzaSyAhVC7203nDANg-p-nHCdmXQc-TNHWaLpM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>882662118055</string>
+	<string>820316452522</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>bundle-identifier-com.esther.GarageDoor</string>
+	<string>com.esther.garagedooroepenerapp.GarageDoorOpenerApp</string>
 	<key>PROJECT_ID</key>
-	<string>garage-door-opener-application</string>
+	<string>garage-door-opener-appli-e2fd0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>garage-door-opener-application.firebasestorage.app</string>
+	<string>garage-door-opener-appli-e2fd0.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:882662118055:ios:e66c58beb153ea7de54182</string>
+	<string>1:820316452522:ios:c71425717d4a3a7f8082d3</string>
 </dict>
 </plist>

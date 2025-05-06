@@ -9,12 +9,12 @@ import SwiftUI
 
 
 struct NotificationList:View{
-    let notifications: [NotificationItem]
+    let notifications: [Notification]
     @State private var searchText = ""
     
     
     //filtered notifications based on search
-    var filteredNotifications:[NotificationItem]{
+    var filteredNotifications:[Notification]{
         if searchText.isEmpty{
             return notifications
         } else {
@@ -29,6 +29,11 @@ struct NotificationList:View{
     
     var body: some View {
         NavigationView {
+            VStack{
+                TextField("Search Notifications", text:$searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+            }
 
                 List(notifications, id: \.timestamp) { notification in
                     NotificationRow(notification: notification)
