@@ -28,17 +28,14 @@ struct NotificationList:View{
     
     
     var body: some View {
-        NavigationView {
-            VStack{
-                TextField("Search Notifications", text:$searchText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-            }
-
+        TextField("Search Notifications", text:$searchText)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+        
                 List(notifications, id: \.timestamp) { notification in
                     NotificationRow(notification: notification)
                 }
-                .searchable(text:$searchText)
+                
                 .navigationTitle("Notifications")
                 //.id(UUID()) // Forces SwiftUI to refresh when notifications update
                 
@@ -51,7 +48,7 @@ struct NotificationList:View{
                 //}
             //}
         }
-    }
+    
 
         
 

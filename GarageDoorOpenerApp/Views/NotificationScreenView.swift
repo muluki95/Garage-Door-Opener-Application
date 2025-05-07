@@ -11,7 +11,7 @@ struct NotificationScreenView: View {
     @StateObject var notificationsVM: NotificationsViewModel
 
     var body: some View {
-        NotificationList(viewModel: notifications)
-            .navigationTitle("Notifications")
+        NotificationList(notifications: notificationsVM.notifications)
+            //.navigationTitle("Notifications")
     }
 }

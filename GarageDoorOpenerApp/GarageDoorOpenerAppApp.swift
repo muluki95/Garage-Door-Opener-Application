@@ -11,22 +11,27 @@ import Firebase
 @main
 struct GarageDoorOpenerAppApp: App {
     
-    @StateObject private var notificationsViewModel = NotificationsViewModel()
+    @StateObject private var notificationsViewModel: NotificationsViewModel
     @StateObject private var garageViewModel: GarageDoorViewModel
     @StateObject private var settingsViewModel = SettingsViewModel()
+    
+    
     
     init() {
         //initializing the Firebase SDK
         FirebaseApp.configure()
-            // Ensure the same NotificationsViewModel instance is passed to GarageDoorViewModel
-            let sharedNotificationsViewModel = NotificationsViewModel()
+        let repository = NotificationRepository()
+        // Ensure Firebase is correctly configured
+        
+            // Created shared view model with repository dependency
+        let sharedNotificationsViewModel = NotificationsViewModel(repository:repository)
             _garageViewModel = StateObject(wrappedValue: GarageDoorViewModel(notificationsViewModel: sharedNotificationsViewModel))
             _notificationsViewModel = StateObject(wrappedValue: sharedNotificationsViewModel)
         }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
             GarageHomeView(
             notificationsViewModel: notificationsViewModel,
             garageViewModel: garageViewModel

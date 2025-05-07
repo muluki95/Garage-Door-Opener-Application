@@ -10,7 +10,7 @@ import Foundation
 
 struct GarageStatusData: Codable{
     let garage: GarageState
-    let notifications: [NotificationItem]
+    let notifications: [Notification]
     
 }
  

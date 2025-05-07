@@ -5,6 +5,8 @@ struct GarageHomeView: View {
     @ObservedObject var garageViewModel: GarageDoorViewModel
     @StateObject var viewModel = SettingsViewModel()
     
+   
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -43,7 +45,7 @@ struct GarageHomeView: View {
                 }
                 .padding(.horizontal)
                 // Navigate to NotificationScreenView
-                                NavigationLink(destination: NotificationScreenView(notificationsViewModel: notificationsViewModel)) {
+                                NavigationLink(destination: NotificationScreenView(notificationsVM: notificationsViewModel)) {
                                     Text("View Notifications")
                                         .font(.headline)
                                         .foregroundColor(.blue)
@@ -68,7 +70,9 @@ struct GarageHomeView: View {
 
 struct GarageHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let notificationsVM = NotificationsViewModel()
+        //dummyrepository
+        let repository = NotificationRepository()
+        let notificationsVM = NotificationsViewModel(repository:repository)
                 let garageVM = GarageDoorViewModel(notificationsViewModel: notificationsVM)
                 
                 return GarageHomeView(notificationsViewModel: notificationsVM, garageViewModel: garageVM)

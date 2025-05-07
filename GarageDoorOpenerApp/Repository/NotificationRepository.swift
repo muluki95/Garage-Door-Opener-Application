@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
-//import FirebaseFirestoreCombineSwift
+
 
 
 class NotificationRepository {
@@ -21,7 +21,7 @@ class NotificationRepository {
             print("Notification added with ID: \(ref.documentID)")
             
         } catch {
-            print("Error adding notification: \(error)")
+            print("Error adding notification: \(error.localizedDescription)")
             throw error
         }
     }
