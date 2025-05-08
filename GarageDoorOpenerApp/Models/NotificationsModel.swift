@@ -15,7 +15,7 @@ struct Notification: Codable,Identifiable {
 
 extension Notification {
     static let testNotification = Notification (
-        title: "Garage Door Opened",
+       title: "Garage Door Opened",
         message: "Your garage door has been opened at 3.15PM"
     
     )

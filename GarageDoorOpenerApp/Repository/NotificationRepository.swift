@@ -25,4 +25,18 @@ class NotificationRepository {
             throw error
         }
     }
+    
+    //function to fetch notifications from firestore
+    func fetchNotifications() async throws -> [Notification]{
+        let snapshot = try await db.collection("notifications")
+            .order(by:"timestamp", descending: true)
+            .getDocuments()
+        
+        let notifications =  try snapshot.documents.compactMap {
+            try $0.data(as: Notification.self)
+            
+        }
+        print("Retrieved Notification: \(notifications)")
+        return notifications
+    }
 }

@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 class NotificationsViewModel: ObservableObject {
     @Published var notifications: [Notification] = []
+    @Published var errorMessage: String?
     
     private let repository:NotificationRepository
     
@@ -28,14 +29,27 @@ class NotificationsViewModel: ObservableObject {
                 print("Notification added to Firestore")
                 
             }catch{
-                print("Failed to add notification:\(error.localizedDescription)")
-                
+                errorMessage = error.localizedDescription
             }
         }
     }
     
+    //function to fetch notifications from firestore
     
+    func fetchNotifications() async {
+        Task{
+            do{
+                let data = try await repository.fetchNotifications()
+                notifications = data
+            } catch {
+                errorMessage = error.localizedDescription
+            }
+        }
+    }
+        
+        //function to clear all the notifications on the list
     func clearAllNotifications(){
         notifications.removeAll()
+        }
     }
-}
+

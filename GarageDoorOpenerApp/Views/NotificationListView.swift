@@ -9,16 +9,17 @@ import SwiftUI
 
 
 struct NotificationList:View{
-    let notifications: [Notification]
+    
+    @ObservedObject var notificationsViewModel:NotificationsViewModel
     @State private var searchText = ""
     
     
     //filtered notifications based on search
     var filteredNotifications:[Notification]{
         if searchText.isEmpty{
-            return notifications
+            return notificationsViewModel.notifications
         } else {
-            return notifications.filter{
+            return notificationsViewModel.notifications.filter{
                 $0.title.lowercased().contains(searchText.lowercased()) ||
                 $0.message.lowercased().contains(searchText.lowercased())
             }
@@ -28,27 +29,26 @@ struct NotificationList:View{
     
     
     var body: some View {
-        TextField("Search Notifications", text:$searchText)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
-        
-                List(notifications, id: \.timestamp) { notification in
-                    NotificationRow(notification: notification)
-                }
-                
-                .navigationTitle("Notifications")
-                //.id(UUID()) // Forces SwiftUI to refresh when notifications update
-                
-                Spacer()
+        VStack{
+            TextField("Search Notifications", text:$searchText)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            List(filteredNotifications, id: \.timestamp) { notification in
+                NotificationRow(notification: notification)
             }
             
-            //.toolbar {
-                //Button ("Clear All"){
-                //notificationsViewModel.clearAllNotifications()
-                //}
-            //}
+            .navigationTitle("Notifications")
+            
+            
+            Button("Refresh Notifications"){
+                Task{
+                    await notificationsViewModel.fetchNotifications()
+                }
+            }
+            
         }
-    
-
         
-
+    }
+    
+}

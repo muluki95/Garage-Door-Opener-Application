@@ -8,10 +8,10 @@ struct GarageHomeView: View {
    
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 // Recent Notifications (moved to the top)
-                Text("Recent Notifications")
+                Text("Garage Control Panel")
                     .font(.headline)
                     .padding(.top)
                 
@@ -23,16 +23,16 @@ struct GarageHomeView: View {
                 
                 // Garage Status
                 Text(garageViewModel.garageStatus.isOpen ? "Garage Door: OPEN" : "Garage Door: CLOSED")
-                    //.padding()
-                    //.fontWeight(.bold)
-                   // .font(.title2)
+                //.padding()
+                //.fontWeight(.bold)
+                // .font(.title2)
                 
                 Spacer().frame(height: 50)
                 
                 // Toggle Button
                 Button(action: {
                     garageViewModel.toggleDoor()
-                                        
+                    
                 }) {
                     Text(garageViewModel.garageStatus.isOpen ? "Close Garage" : "Open Garage")
                         .font(.title2)
@@ -44,29 +44,36 @@ struct GarageHomeView: View {
                         .padding()
                 }
                 .padding(.horizontal)
-                // Navigate to NotificationScreenView
-                                NavigationLink(destination: NotificationScreenView(notificationsVM: notificationsViewModel)) {
-                                    Text("View Notifications")
-                                        .font(.headline)
-                                        .foregroundColor(.blue)
-                                        .padding()
-                                }
-                //Navigation to SettingScreenView
-                NavigationLink(destination: SettingsScreenView()) {
-                    Text("Settings")
+                // Navigate to NotificationList view
+                NavigationLink(destination: NotificationList(notificationsViewModel: notificationsViewModel)) {
+                    Text("View Notifications")
                         .font(.headline)
                         .foregroundColor(.blue)
                         .padding()
                 }
             }
-            .navigationBarItems(trailing: Button("Clear All") {
-                notificationsViewModel.clearAllNotifications()
-            })
+            //Navigation to SettingScreenView
+            NavigationLink(destination: SettingsScreenView()) {
+                Text("Settings")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding()
+            }
         }
+        .navigationTitle("Garage Home")
+        .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Clear All") {
+                        notificationsViewModel.clearAllNotifications()
+                    }
+                }
+            
+        }
+        
     }
-    
-    
-}
+    }
+
+
 
 struct GarageHomeView_Previews: PreviewProvider {
     static var previews: some View {
