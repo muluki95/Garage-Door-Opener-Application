@@ -9,8 +9,9 @@ import Foundation
 import FirebaseFirestore
 
 class NotificationsViewModel: ObservableObject {
-    @Published var notifications: [Notification] = []
+    @Published var notifications: Loadable<[Notification]> = .loading
     @Published var errorMessage: String?
+    
     
     private let repository:NotificationRepository
     
@@ -20,7 +21,12 @@ class NotificationsViewModel: ObservableObject {
     
     func addNotification(title:String, message:String){
         let newNotification = Notification(title:title, message:message, timestamp:Date())
-        notifications.insert(newNotification, at:0) //adds the new notification at the top of the list
+        
+        if case.loaded(var current) = notifications{
+            current.insert(newNotification, at:0)
+            notifications = .loaded(current)
+        }
+        //notifications.insert(newNotification, at:0) //adds the new notification at the top of the list
         //print("✅ Notification Added: \(newNotification.title) - \(newNotification.message)")
         
         Task{
@@ -40,8 +46,9 @@ class NotificationsViewModel: ObservableObject {
         Task{
             do{
                 let data = try await repository.fetchNotifications()
-                notifications = data
+                notifications = .loaded(data)
             } catch {
+                notifications = .error(error)
                 errorMessage = error.localizedDescription
             }
         }
@@ -49,7 +56,9 @@ class NotificationsViewModel: ObservableObject {
         
         //function to clear all the notifications on the list
     func clearAllNotifications(){
-        notifications.removeAll()
+        if case.loaded = notifications {
+            notifications = .empty
+        }
         }
     }
 

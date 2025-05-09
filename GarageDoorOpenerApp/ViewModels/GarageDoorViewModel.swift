@@ -42,7 +42,7 @@ class GarageDoorViewModel : ObservableObject {
             //update the garage status and notifications
             DispatchQueue.main.async {
                 self.garageStatus.isOpen = decodedData.garage.isOpen
-                self.notificationsViewModel.notifications = decodedData.notifications
+                self.notificationsViewModel.notifications = .loaded(decodedData.notifications)
             }
             return decodedData
         }catch {
