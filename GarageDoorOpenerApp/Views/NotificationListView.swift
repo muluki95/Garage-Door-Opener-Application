@@ -82,17 +82,32 @@ struct NotificationList:View{
                 }
             case .loaded:
                 List(filteredNotifications, id: \.timestamp) { notification in
-                    NotificationRow(notification: notification)
+                    NotificationRow(
+                        notification: notification,
+                        deleteAction: {
+                            Task {
+                                try? await notificationsViewModel.makeDeleteAction(for: notification)()
+                            }
+                        }
+                    )
+                    .animation(.default, value: filteredNotifications)
                 }
                 
             }
+        }
+                
+                
+                .navigationTitle("Notifications")
+                
+            }
+            private func deleteNotification(_ notification: Notification) async {
+                let deleteAction = notificationsViewModel.makeDeleteAction(for: notification)
+                try! await deleteAction()
+            }
             
         }
-        
-        .navigationTitle("Notifications")
-        
-    }
-}
-    
     
 
+    
+    
+    

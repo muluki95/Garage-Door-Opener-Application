@@ -53,6 +53,17 @@ class NotificationsViewModel: ObservableObject {
             }
         }
     }
+    //factory function for deleting notifications
+    
+    func makeDeleteAction(for notification: Notification, withAnimation: Bool = false) -> NotificationRow.DeleteAction {
+        return {[weak self] in
+            try await self?.repository.delete(notification)
+            if case .loaded(var current) = self?.notifications {
+                current.removeAll {$0.id == notification.id}
+                self?.notifications = .loaded(current)
+            }
+        }
+    }
         
         //function to clear all the notifications on the list
     func clearAllNotifications(){

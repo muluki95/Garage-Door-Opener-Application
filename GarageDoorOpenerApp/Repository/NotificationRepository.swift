@@ -39,4 +39,13 @@ class NotificationRepository {
         print("Retrieved Notification: \(notifications)")
         return notifications
     }
+    
+    //function to delete a notification from firestore
+    func delete(_ notification: Notification) async throws {
+        let documentReference = db.collection("notifications").document(notification.id.uuidString)
+        try await documentReference.delete()
+        
+        print("Notificatin deleted successfully:\(notification.id.uuidString)")
+        
+    }
 }

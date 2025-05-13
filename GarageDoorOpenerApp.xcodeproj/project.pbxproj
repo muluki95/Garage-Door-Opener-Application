@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7685D432DC9283300EFC07D /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = D7685D422DC9283300EFC07D /* ToastUI */; };
+		D76EAF742DD3EDED0013AE73 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D76EAF732DD3EDED0013AE73 /* FirebaseAuth */; };
 		D79F58CA2DCAB0A4002A5CBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7685D432DC9283300EFC07D /* ToastUI in Frameworks */,
+				D76EAF742DD3EDED0013AE73 /* FirebaseAuth in Frameworks */,
 				D79F58CA2DCAB0A4002A5CBF /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +109,7 @@
 			packageProductDependencies = (
 				D7685D422DC9283300EFC07D /* ToastUI */,
 				D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */,
+				D76EAF732DD3EDED0013AE73 /* FirebaseAuth */,
 			);
 			productName = GarageDoorOpenerApp;
 			productReference = D7624FAF2D89CF4600B32C05 /* GarageDoorOpenerApp.app */;
@@ -486,6 +489,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D7685D392DC91C2F00EFC07D /* XCRemoteSwiftPackageReference "ToastUI" */;
 			productName = ToastUI;
+		};
+		D76EAF732DD3EDED0013AE73 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D79F58C82DCAAFF2002A5CBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;

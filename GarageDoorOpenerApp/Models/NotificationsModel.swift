@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct Notification: Codable,Identifiable {
+struct Notification: Codable,Identifiable,Equatable {
     var id = UUID()
     var title: String
     var message: String
