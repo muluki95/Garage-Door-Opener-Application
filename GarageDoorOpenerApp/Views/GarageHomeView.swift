@@ -9,6 +9,7 @@ struct GarageHomeView: View {
     
     var body: some View {
         NavigationStack {
+            
             VStack {
                 // Recent Notifications (moved to the top)
                 Text("Garage Control Panel")
@@ -16,7 +17,7 @@ struct GarageHomeView: View {
                     .foregroundColor(.primary)
                     .fontWeight(.bold)
                     .padding(.top)
-                    
+                
                 
                 //List(notificationsViewModel.notifications, id: \.timestamp) { notification in
                 //NotificationRow(notification: notification)
@@ -47,22 +48,11 @@ struct GarageHomeView: View {
                     .padding()
             }
             .padding(.horizontal)
-            // Navigate to NotificationList view
-            NavigationLink(destination: NotificationList(notificationsViewModel: notificationsViewModel)) {
-                Text("View Notifications")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                    .padding()
-           // }
+            
         }
         //Navigation to SettingScreenView
-        NavigationLink(destination: SettingsScreenView()) {
-            Text("Settings")
-                .font(.headline)
-                .foregroundColor(.blue)
-                .padding()
-        }
-    
+        
+        
         //.navigationTitle("Garage Home")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -72,22 +62,6 @@ struct GarageHomeView: View {
             }
         }
     }
-        }
-        
-    }
-    
-
-
-
-struct GarageHomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        //dummyrepository
-        let repository = NotificationRepository()
-        let notificationsVM = NotificationsViewModel(repository:repository)
-                let garageVM = GarageDoorViewModel(notificationsViewModel: notificationsVM)
-                
-                return GarageHomeView(notificationsViewModel: notificationsVM, garageViewModel: garageVM)
-            .environmentObject(SettingsViewModel())
-            
-    }
 }
+        
+    

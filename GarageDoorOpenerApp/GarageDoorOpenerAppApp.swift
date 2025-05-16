@@ -31,11 +31,11 @@ struct GarageDoorOpenerAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+                //AuthView()
+            MainTabView(notificationsViewModel: notificationsViewModel,
+                        garageViewModel: garageViewModel)
             
-            GarageHomeView(
-            notificationsViewModel: notificationsViewModel,
-            garageViewModel: garageViewModel
-            )
+            //GarageHomeView()
             
         }
     }
