@@ -3,7 +3,7 @@ import SwiftUI
 struct GarageHomeView: View {
     @ObservedObject var notificationsViewModel: NotificationsViewModel
     @ObservedObject var garageViewModel: GarageDoorViewModel
-    @StateObject var viewModel = SettingsViewModel()
+    
     
     
     

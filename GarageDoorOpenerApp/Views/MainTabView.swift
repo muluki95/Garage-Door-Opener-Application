@@ -9,7 +9,6 @@ import SwiftUI
 struct MainTabView: View {
     @ObservedObject var notificationsViewModel: NotificationsViewModel
     @ObservedObject var garageViewModel:GarageDoorViewModel
-    @StateObject var settingsViewModel = SettingsViewModel()
     
     var body: some View {
         TabView{
@@ -31,8 +30,7 @@ struct MainTabView: View {
                 Text("Notifications")
             }
             NavigationStack {
-                SettingsScreenView()
-                    .environmentObject(settingsViewModel)
+                
             }
             .tabItem{
                 Image(systemName: "gear")
