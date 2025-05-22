@@ -36,67 +36,68 @@ struct NotificationList:View{
     
     
     var body: some View {
-        VStack{
-            //TextField("Search Notifications", text:$searchText)
-            //.textFieldStyle(RoundedBorderTextFieldStyle())
-            //.padding()
-            //Handles the various loading states
-            
-            switch notificationsViewModel.notifications {
-            case.loading:
-                ProgressView("Loading Notifications...")
-                    .onAppear {
-                        if !hasStartedLoading {
-                            hasStartedLoading = true
-                            
-                            Task {
-                                try await Task.sleep(nanoseconds:1_500_000_000) //there is a delay of 1.5seconds before it fetches the notifications
+        
+            VStack{
+                //TextField("Search Notifications", text:$searchText)
+                //.textFieldStyle(RoundedBorderTextFieldStyle())
+                //.padding()
+                //Handles the various loading states
+                
+                switch notificationsViewModel.notifications {
+                case.loading:
+                    ProgressView("Loading Notifications...")
+                        .onAppear {
+                            if !hasStartedLoading {
+                                hasStartedLoading = true
+                                
+                                Task {
+                                    try await Task.sleep(nanoseconds:1_500_000_000) //there is a delay of 1.5seconds before it fetches the notifications
+                                    await notificationsViewModel.fetchNotifications()
+                                }
+                            }
+                        }
+                case.error(let error):
+                    VStack{
+                        Text("Failed to load Notifications:")
+                            .font(.headline)
+                        Text(error.localizedDescription)
+                            .foregroundColor(.red)
+                        Button("Retry"){
+                            Task{
                                 await notificationsViewModel.fetchNotifications()
                             }
                         }
                     }
-            case.error(let error):
-                VStack{
-                    Text("Failed to load Notifications:")
-                        .font(.headline)
-                    Text(error.localizedDescription)
-                        .foregroundColor(.red)
-                    Button("Retry"){
-                        Task{
-                            await notificationsViewModel.fetchNotifications()
-                        }
-                    }
-                }
-                .padding()
-                
-            case .loaded(let notifications) where notifications.isEmpty :
-                VStack{
-                    Text("No notifications found")
-                        .foregroundColor(.gray)
-                    Button("Refresh Notifications"){
-                        Task{
-                            await notificationsViewModel.fetchNotifications()
-                        }
-                        
-                    }
-                }
-            case .loaded:
-                List(filteredNotifications, id: \.timestamp) { notification in
-                    NotificationRow(
-                        notification: notification,
-                        deleteAction: {
-                            Task {
-                                try? await notificationsViewModel.makeDeleteAction(for: notification)()
+                    .padding()
+                    
+                case .loaded(let notifications) where notifications.isEmpty :
+                    VStack{
+                        Text("No notifications found")
+                            .foregroundColor(.gray)
+                        Button("Refresh Notifications"){
+                            Task{
+                                await notificationsViewModel.fetchNotifications()
                             }
+                            
                         }
-                    )
-                    .animation(.default, value: filteredNotifications)
+                    }
+                case .loaded:
+                    List(filteredNotifications, id: \.timestamp) { notification in
+                        NotificationRow(
+                            notification: notification,
+                            deleteAction: {
+                                Task {
+                                    try? await notificationsViewModel.makeDeleteAction(for: notification)()
+                                }
+                            }
+                        )
+                        .animation(.default, value: filteredNotifications)
+                    }
+                    
                 }
-                
             }
-        }
-                
-                
+            
+        
                 .navigationTitle("Notifications")
                 
             }

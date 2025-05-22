@@ -6,12 +6,14 @@
 //
 import SwiftUI
 import Combine
+import FirebaseAuth
 
 
 
 struct SignInView: View {
     @State var email = ""
     @State var password = ""
+    @EnvironmentObject var viewModel:AuthViewModel
     
     var body:some View {
         NavigationStack{
@@ -25,7 +27,9 @@ struct SignInView: View {
                 //signin button
                 
                 Button (action:{
-                    
+                    Task{
+                        try await viewModel.signIn(email:email, password:password)
+                    }
                 })  {
                     HStack {
                         Text("Sign In")
@@ -35,6 +39,8 @@ struct SignInView: View {
                     .frame(maxWidth:.infinity, minHeight: 50)
                     .foregroundColor(.white)
                     .background(Color.blue)
+                    .disabled(formIsValid)
+                    .opacity(formIsValid ? 1 : 0.5)
                     .cornerRadius(8)
                     
                 }
@@ -60,8 +66,17 @@ struct SignInView: View {
 }
     
 
+extension SignInView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty && email.contains("@") && !password.isEmpty && password.count > 5 && password.count < 100
+    }
+    
+    
+}
+
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
+            .environmentObject(AuthViewModel())
     }
 }

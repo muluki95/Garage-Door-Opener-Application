@@ -11,6 +11,7 @@ struct GarageHomeView: View {
         NavigationStack {
             
             VStack {
+                
                 // Recent Notifications (moved to the top)
                 Text("Garage Control Panel")
                     .font(.headline)
@@ -19,8 +20,12 @@ struct GarageHomeView: View {
                     .padding(.top)
                 
                 
-                //List(notificationsViewModel.notifications, id: \.timestamp) { notification in
-                //NotificationRow(notification: notification)
+                Image("garageImage")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 350)
+                    //.background(Color.red)
+                    .padding()
             }
             
             Spacer()
@@ -28,7 +33,7 @@ struct GarageHomeView: View {
             // Garage Status
             Text(garageViewModel.garageStatus.isOpen ? "Garage Door: OPEN" : "Garage Door: CLOSED")
             //.padding()
-            //.fontWeight(.bold)
+                .fontWeight(.bold)
             // .font(.title2)
             
             Spacer().frame(height: 50)

@@ -17,7 +17,7 @@ struct SettingsRowView: View {
                 .imageScale(.small)
                 .font(.title)
                 .foregroundColor(tintColor)
-            Text("Version")
+            Text(title)
                 .font(.subheadline)
                 .foregroundColor(Color.gray)
                 .padding(.leading, 5)

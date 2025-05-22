@@ -7,36 +7,41 @@
 
 import SwiftUI
 import ToastUI
+import Firebase
 
 
 struct ContentView: View {
     @State private var showToast = false
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var notificationsViewModel: NotificationsViewModel
+    @EnvironmentObject var garageViewModel: GarageDoorViewModel
+    
     var body: some View {
-        NavigationStack{
-            VStack{
-                Spacer()
-                Button {
-                    showToast = true
-                } label: {
-                    Text("Show Toast")
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding()
-                        .cornerRadius(5.0)
-                }
-                .padding()
-            }
-            .toast(isPresented : $showToast, dismissAfter: 1.0){
-                ToastView{
-                    Text("This is a toast")
-                }
+        Group{
+            if viewModel.userSession != nil {
+                MainTabView()
+            }else {
+                SignInView()
             }
         }
+        .onAppear {
+            print("Current session: \(String(describing: viewModel.userSession?.uid))")
+        }
+        
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-    }
+            // Inject manually for preview only
+            let repository = NotificationRepository()
+            let notificationsVM = NotificationsViewModel(repository: repository)
+            let garageVM = GarageDoorViewModel(notificationsViewModel: notificationsVM)
+            let authVM = AuthViewModel()
+            
+            ContentView()
+                .environmentObject(authVM)
+                .environmentObject(notificationsVM)
+                .environmentObject(garageVM)
+        }
 }

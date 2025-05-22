@@ -14,9 +14,18 @@ struct User: Identifiable,Equatable, Codable {
     var uid: String
     var name: String
     var email: String
-    var createdAt: Date
+    
+    var initials: String {
+        let formatter = PersonNameComponentsFormatter()
+        if let components = formatter.personNameComponents(from: name){
+            formatter.style = .abbreviated
+            return formatter.string(from: components)
+        }
+        return ""
+    }
+    
     
 }
 extension User {
-    static let testUser = User(uid:"1", name:"Esther", email:"esther@gmail.com", createdAt: Date())
+    static var testUser = User(uid:"1", name:"Esther", email:"esther@gmail.com" )
 }

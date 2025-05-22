@@ -11,13 +11,11 @@ import Firebase
 @main
 struct GarageDoorOpenerAppApp: App {
     
-    @StateObject private var notificationsViewModel: NotificationsViewModel
-    @StateObject private var garageViewModel: GarageDoorViewModel
-  
+     @StateObject var viewModel = AuthViewModel()
+    @StateObject var notificationsViewModel: NotificationsViewModel
+    @StateObject var garageViewModel:GarageDoorViewModel
+
    
-    
-    
-    
     init() {
         //initializing the Firebase SDK
         FirebaseApp.configure()
@@ -33,13 +31,11 @@ struct GarageDoorOpenerAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-                //AuthView()
-            NavigationView{
-                
-            }
-            //MainTabView(notificationsViewModel: notificationsViewModel,
-                        //garageViewModel: garageViewModel)
-        
+            ContentView()
+                .environmentObject(viewModel)
+                .environmentObject(notificationsViewModel)
+                .environmentObject(garageViewModel)
+            
             
         }
     }

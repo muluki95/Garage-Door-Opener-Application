@@ -9,12 +9,14 @@ import SwiftUI
 import FirebaseAuth
 
 struct ProfileView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
+        if let user = viewModel.currentUser{
         List{
             Section{
                 HStack{
-                    Text("EN")
+                    Text(user.initials)
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -22,10 +24,10 @@ struct ProfileView: View {
                         .background(Color.gray)
                         .clipShape(Circle())
                     VStack(alignment:.leading, spacing: 4){
-                        Text("Esther Nzomo")
+                        Text(user.name)
                             .fontWeight(.semibold)
                             .padding(.top, 4)
-                        Text("esther@gmail.com")
+                        Text(user.email)
                             .font(.footnote)
                             .accentColor(.gray)
                     }
@@ -43,14 +45,23 @@ struct ProfileView: View {
                 }
             }
                 Section("Account"){
-                    
+                    Button(action:{
+                        viewModel.signOut()
+                        
+                    }){
+                        SettingsRowView(imageName:"arrow.left.circle.fill", title:"Sign Out", tintColor: Color.red)
+                        
+                    }
+                    }
                 }
             
-        }
+        } 
     }
 }
+
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(AuthViewModel())
     }
 }
