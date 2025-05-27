@@ -10,6 +10,7 @@ struct MainTabView: View {
     @EnvironmentObject var notificationsViewModel: NotificationsViewModel
     @EnvironmentObject var garageViewModel:GarageDoorViewModel
     @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var voiceViewModel: VoiceControlViewModel
 
     
     var body: some View {
@@ -58,5 +59,6 @@ struct MainTabView_Previews: PreviewProvider {
             .environmentObject(authVM)
             .environmentObject(notificationsVM)
             .environmentObject(garageVM)
+            .environmentObject(VoiceControlViewModel())
     }
 }

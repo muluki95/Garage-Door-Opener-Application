@@ -16,6 +16,7 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     @EnvironmentObject var notificationsViewModel: NotificationsViewModel
     @EnvironmentObject var garageViewModel: GarageDoorViewModel
+    @EnvironmentObject var voiceControlViewModel: VoiceControlViewModel
     
     var body: some View {
         Group{
@@ -43,5 +44,6 @@ struct ContentView_Previews: PreviewProvider {
                 .environmentObject(authVM)
                 .environmentObject(notificationsVM)
                 .environmentObject(garageVM)
+                .environmentObject(VoiceControlViewModel())
         }
 }

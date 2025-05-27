@@ -3,6 +3,8 @@ import SwiftUI
 struct GarageHomeView: View {
     @ObservedObject var notificationsViewModel: NotificationsViewModel
     @ObservedObject var garageViewModel: GarageDoorViewModel
+    @EnvironmentObject private var voiceViewModel:VoiceControlViewModel
+    
     
     
     
@@ -26,7 +28,6 @@ struct GarageHomeView: View {
                     .frame(height: 350)
                     //.background(Color.red)
                     .padding()
-            }
             
             Spacer()
             
@@ -55,18 +56,43 @@ struct GarageHomeView: View {
             .padding(.horizontal)
             
         }
-        //Navigation to SettingScreenView
+        //Voice control button
+            Button(action: {
+                                if voiceViewModel.isListening {
+                                    voiceViewModel.stopListening()
+                                } else {
+                                    Task {
+                                        await voiceViewModel.startListening(
+                                            garageViewModel: garageViewModel,
+                                            notificationsViewModel: notificationsViewModel
+                                        )
+                                    }
+                                }
+                            }) {
+                                HStack {
+                                    Image(systemName: voiceViewModel.isListening ? "mic.slash.fill" : "mic.fill")
+                                    Text(voiceViewModel.isListening ? "Stop Listening" : "Start Listening")
+                                        .font(.title3)
+                                        .fontWeight(.bold)
+                                }
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(voiceViewModel.isListening ? Color.red : Color.blue)
+                                .cornerRadius(10)
+                            }
+                            .padding(.top)
+                        }
+                        .padding()
         
-        
-        //.navigationTitle("Garage Home")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Clear All") {
                     notificationsViewModel.clearAllNotifications()
                 }
             }
+            }
         }
     }
-}
+
         
     

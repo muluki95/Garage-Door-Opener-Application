@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73285E62DE0DEE4003F3A7B /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73285E52DE0DEE4003F3A7B /* Speech.framework */; };
 		D7685D432DC9283300EFC07D /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = D7685D422DC9283300EFC07D /* ToastUI */; };
 		D76EAF742DD3EDED0013AE73 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D76EAF732DD3EDED0013AE73 /* FirebaseAuth */; };
 		D79F58CA2DCAB0A4002A5CBF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D79F58C92DCAB0A4002A5CBF /* FirebaseFirestore */; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D73285E52DE0DEE4003F3A7B /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		D7624FAF2D89CF4600B32C05 /* GarageDoorOpenerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageDoorOpenerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76F04762DC532CD009F715F /* GarageDoorOpenerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarageDoorOpenerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73285E62DE0DEE4003F3A7B /* Speech.framework in Frameworks */,
 				D7685D432DC9283300EFC07D /* ToastUI in Frameworks */,
 				D76EAF742DD3EDED0013AE73 /* FirebaseAuth in Frameworks */,
 				D79F58CA2DCAB0A4002A5CBF /* FirebaseFirestore in Frameworks */,
@@ -83,6 +86,7 @@
 		D7685D412DC9283300EFC07D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D73285E52DE0DEE4003F3A7B /* Speech.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -14,6 +14,7 @@ struct GarageDoorOpenerAppApp: App {
      @StateObject var viewModel = AuthViewModel()
     @StateObject var notificationsViewModel: NotificationsViewModel
     @StateObject var garageViewModel:GarageDoorViewModel
+    @StateObject var voiceViewModel =  VoiceControlViewModel()
 
    
     init() {
@@ -27,6 +28,7 @@ struct GarageDoorOpenerAppApp: App {
         let sharedNotificationsViewModel = NotificationsViewModel(repository:repository)
             _garageViewModel = StateObject(wrappedValue: GarageDoorViewModel(notificationsViewModel: sharedNotificationsViewModel))
             _notificationsViewModel = StateObject(wrappedValue: sharedNotificationsViewModel)
+        
             }
     
     var body: some Scene {
@@ -35,6 +37,7 @@ struct GarageDoorOpenerAppApp: App {
                 .environmentObject(viewModel)
                 .environmentObject(notificationsViewModel)
                 .environmentObject(garageViewModel)
+                .environmentObject(voiceViewModel)
             
             
         }
