@@ -25,9 +25,9 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>This app uses speech recognition to control the garage door.</string>
+	<string>This app uses speech recognition to control the garage door with your voice.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>This app needs access to the microphone to listen to your voice commands.</string>
+	<string>This app uses the microphone to listen for voice commands to control the garage door.</string>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:820316452522:ios:c71425717d4a3a7f8082d3</string>
 </dict>

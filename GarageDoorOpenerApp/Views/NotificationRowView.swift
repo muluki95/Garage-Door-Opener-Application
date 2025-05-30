@@ -68,13 +68,7 @@ struct NotificationRow: View {
             Text(errorMessage)
         }
                 
-                //struct NotificationRow_Previews:PreviewProvider {
-                //static var previews: some View{
-                //List{
-                //NotificationRow(notification: Notification.testNotification, deleteAction:{})
-                //}
-                //}
-                //}
+                
             }
         }
         

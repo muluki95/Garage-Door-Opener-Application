@@ -29,9 +29,22 @@
 		D76F04762DC532CD009F715F /* GarageDoorOpenerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarageDoorOpenerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D7F64A822DEA0B310019CF50 /* Exceptions for "GarageDoorOpenerApp" folder in "GarageDoorOpenerApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D7624FAE2D89CF4600B32C05 /* GarageDoorOpenerApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D7624FB12D89CF4600B32C05 /* GarageDoorOpenerApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D7F64A822DEA0B310019CF50 /* Exceptions for "GarageDoorOpenerApp" folder in "GarageDoorOpenerApp" target */,
+			);
 			path = GarageDoorOpenerApp;
 			sourceTree = "<group>";
 		};
@@ -357,6 +370,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GarageDoorOpenerApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GarageDoorOpenerApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to listen to voice commands to control the garage door";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to control the garage door";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -385,6 +402,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GarageDoorOpenerApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GarageDoorOpenerApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone to listen to voice commands to control the garage door";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to control the garage door";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -26,8 +26,6 @@ class NotificationsViewModel: ObservableObject {
             current.insert(newNotification, at:0)
             notifications = .loaded(current)
         }
-        //notifications.insert(newNotification, at:0) //adds the new notification at the top of the list
-        //print("✅ Notification Added: \(newNotification.title) - \(newNotification.message)")
         
         Task{
             do{
@@ -43,13 +41,17 @@ class NotificationsViewModel: ObservableObject {
     //function to fetch notifications from firestore
     
     func fetchNotifications() async {
-        Task{
+        
             do{
                 let data = try await repository.fetchNotifications()
-                notifications = .loaded(data)
-            } catch {
-                notifications = .error(error)
-                errorMessage = error.localizedDescription
+                await MainActor.run {
+                    notifications = .loaded(data)
+                }
+             } catch {
+                await MainActor.run {
+                    notifications = .error(error)
+                    errorMessage = error.localizedDescription
+                
             }
         }
     }

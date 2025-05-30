@@ -11,7 +11,7 @@ import Firebase
 @main
 struct GarageDoorOpenerAppApp: App {
     
-     @StateObject var viewModel = AuthViewModel()
+    @StateObject var viewModel = AuthViewModel()
     @StateObject var notificationsViewModel: NotificationsViewModel
     @StateObject var garageViewModel:GarageDoorViewModel
     @StateObject var voiceViewModel =  VoiceControlViewModel()
