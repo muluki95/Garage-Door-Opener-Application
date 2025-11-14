@@ -27,12 +27,15 @@ struct InputView: View {
                     .font(.system(size:14))
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled(true)
+                    .textContentType(.none)
+                    .submitLabel(.done)
             }else {
                 TextField(placeholder, text: $text)
                     .font(.system(size: 14))
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled(true)
                     .keyboardType(.emailAddress)
+                    .textContentType(.none)
             }
             Divider()
         }

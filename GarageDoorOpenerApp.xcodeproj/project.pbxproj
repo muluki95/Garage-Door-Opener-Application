@@ -368,6 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GarageDoorOpenerApp/Preview Content\"";
+				DEVELOPMENT_TEAM = F4KVDT462T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GarageDoorOpenerApp/Info.plist;
@@ -400,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GarageDoorOpenerApp/Preview Content\"";
+				DEVELOPMENT_TEAM = F4KVDT462T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GarageDoorOpenerApp/Info.plist;
