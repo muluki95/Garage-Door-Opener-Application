@@ -52,6 +52,19 @@ struct ProfileView: View {
                         SettingsRowView(imageName:"arrow.left.circle.fill", title:"Sign Out", tintColor: Color.red)
                         
                     }
+                    
+                    Button(role: .destructive) {
+                        Task{
+                            do{
+                                try await viewModel.deleteAccount()
+                            } catch {
+                                print("Error deleting account: \(error)")
+                                
+                            }
+                        }
+                    } label: {
+                        Text("Delete Account")
+                    }
                     }
                 }
             

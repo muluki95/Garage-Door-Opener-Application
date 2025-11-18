@@ -71,6 +71,13 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func deleteAccount() async throws {
+        guard let user = Auth.auth().currentUser else { return }
+        
+        try await user.delete()
+        
+    }
+    
     func getCurrentUser() async  {
         guard let uid = self.userSession?.uid else {
             print(" No user session found.")
